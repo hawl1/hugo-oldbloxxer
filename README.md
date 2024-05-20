@@ -1,5 +1,7 @@
 <h1 align=center>hugo-oldbloxxer | <a href="https://hawl1.github.io/hugo-oldbloxxer/">Demo</a></h1>
 
+forked from [index](https://github.com/adityatelange/hugo-index)
+
 <p align="center">
 <kbd><img src="https://github.com/hawl1/hugo-oldbloxxer/assets/126889064/1d56a80f-810f-4e80-99c3-fea88feeca5d/" alt="Mockup image" title="Mockup"></kbd>
 </p>

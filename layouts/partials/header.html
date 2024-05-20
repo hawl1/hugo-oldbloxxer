@@ -3,7 +3,7 @@
     {{ with site.Params.TitleIcon }}
       <img src="{{ . | relURL }}" alt="{{ site.Title }}">
     {{ end }}
-    {{ with resources.Get "images/a.jpg" }}
+    {{ with resources.Get "logo.svg" }}
       <img src="{{ .RelPermalink }}" class="center">
     {{ end }}
   </a>

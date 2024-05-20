@@ -1,8 +1,5 @@
 <header class="banner">
   <a href="{{ "" | relURL }}" onclick="loadPage(event, '{{ "" | relURL }}')">
-    {{ with site.Params.TitleIcon }}
-      <img src="{{ . | relURL }}" alt="{{ site.Title }}">
-    {{ end }}
     {{ with resources.Get "logo.svg" }}
       <img src="{{ .RelPermalink }}" class="center">
     {{ end }}

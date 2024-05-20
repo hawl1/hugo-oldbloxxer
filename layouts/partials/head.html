@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>{{ if not .IsHome }}{{ with .Title }}{{ . }} | {{ end }}{{ end }}{{ site.Title }}</title>
+<meta name="robots" content='{{ cond (hugo.IsProduction) ("index, follow") ("noindex, nofollow" ) }}'>
+<meta name="description" content="{{ .Description }}">
+<meta name="generator" content="hugo-index">
+ <link rel="icon" type="image/x-icon" href="/favicon.png">
+
+{{- $is404 := eq .Kind "404" }}
+
+{{- $styles := (resources.Get "styles.css") | minify }}
+{{- $chromastyles := (resources.Get "chromastyles.css") | minify }}
+{{- $combo := (slice $styles $chromastyles) | resources.Concat "assets/stylesheet.css" }}
+<link crossorigin="anonymous" href="{{ $combo.RelPermalink }}" rel="preload stylesheet" as="style">
+
+<script>
+function loadPage(event, permalink) {
+  event.preventDefault();
+  fetch(permalink)
+    .then(response => response.text())
+    .then(content => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(content, 'text/html');
+      document.title = doc.title;
+      history.pushState({}, doc.title, permalink);
+      document.body.innerHTML = content;
+    })
+    .catch(error => {
+      console.error(`Error loading ${permalink}:`, error);
+    });
+}
+
+</script>

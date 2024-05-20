@@ -1,0 +1,24 @@
+{{- define "main" }}
+
+<ul class="tagsList single">
+  {{ range (.GetTerms "tags") }}
+  <li><a href="{{ .RelPermalink }}" onclick="loadPage(event, '{{ .RelPermalink }}')">{{ .LinkTitle }}</a></li>
+  {{ end }}
+</ul>
+
+{{- $is404 := eq .Kind "404" }}
+
+<div class="content">
+{{- if and (not .IsHome) (not $is404) }}
+    <p>
+      {{- if eq .Kind "term" }}
+      <h1 class="hl">{{ .Title }}</h1>
+      {{- else }}
+      <h1>{{ .Title }}</h1>
+      {{- end }}
+      <h3>Created At: {{ .Date | time.Format ":date_long" }}</h3>
+    </p>
+{{- end }}
+{{ .Content }}</div>
+
+{{- end }}{{- /* end main */ -}}

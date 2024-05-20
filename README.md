@@ -1,16 +1,16 @@
-<h1 align=center>Hugo Oldbloxxer | <a href="https://hawl1.github.io/hugo-oldbloxxer/">Demo</a></h1>
+<h1 align=center>hugo-oldbloxxer | <a href="https://hawl1.github.io/hugo-oldbloxxer/">Demo</a></h1>
 
 <p align="center">
-<kbd><img src="https://user-images.githubusercontent.com/21258296/233713549-07016736-3ca1-46a3-895f-9c08b6cd9145.png" alt="Mockup image" title="Mockup" credits="https://screely.com/"/></kbd>
+<kbd><img src="https://github.com/hawl1/hugo-oldbloxxer/assets/126889064/1d56a80f-810f-4e80-99c3-fea88feeca5d/" alt="Mockup image" title="Mockup"></kbd>
 </p>
+
+logo is located in `/assets/logo.svg`, if your logo is gonna be png, make sure to change in `/layouts/partials/header.html`
 
 ---
 
-## Docs
+### variables
 
-### Variables
-
-| Variable                       | Value       | Description |
+| variable                       | value       | description |
 | ------------------------------ | ----------- | ----------- |
 | `params.showDescriptioninHome` | `true`      |             |
 | `params.hideAllTagsinHome`     | `true`      |             |
@@ -19,6 +19,6 @@
 | `params.headers.value`         | `Tags`      |             |
 | `permalinks.tags`              | `@:slug`    |             |
 
-### Powered by
+### powered by
 
 - [Hugo](https://github.com/gohugoio/hugo) - The world’s fastest framework for building websites.
